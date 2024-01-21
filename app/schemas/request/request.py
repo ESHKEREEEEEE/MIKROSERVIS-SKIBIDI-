@@ -13,7 +13,7 @@ class Params(CoreModel):
 
 class RequestBase(CoreModel):
     # sid: Optional[str]
-    description: Optional[str]
+    name: Optional[str]
     params: Optional[Params]
 
     class Config:
@@ -22,16 +22,16 @@ class RequestBase(CoreModel):
 
 class RequestCreate(RequestBase):
     # sid: UUID
-    description: str
+    name: str
     params: Params
 
 
 class Request(RequestBase):
     sid: UUID
-    description: str
+    name: str
     params: Params
 
 
 class RequestUpdate(RequestBase):
-    description: Optional[str]
+    name: Optional[str]
     params: Optional[dict]
